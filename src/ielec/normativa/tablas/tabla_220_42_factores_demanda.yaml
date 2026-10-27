@@ -1,0 +1,21 @@
+norma: "NTC 2050 (Segunda Actualización)"
+articulo: "220.42"
+titulo: "Factores de demanda para cargas de alumbrado general y tomas generales en unidades de vivienda"
+documento_fuente: "InstalacionesElectricas_casoPractico.pdf"
+diapositiva_fuente: 17
+edicion: "Segunda Actualización"
+fecha_transcripcion: "2026-10-27"
+
+tramos:
+  - limite_inferior_va: 0
+    limite_superior_va: 3000
+    factor_demanda: 1.00
+    descripcion: "Primeros 3000 VA o menos al 100%"
+  - limite_inferior_va: 3000
+    limite_superior_va: 120000
+    factor_demanda: 0.35
+    descripcion: "De 3001 VA a 120000 VA al 35%"
+  - limite_inferior_va: 120000
+    limite_superior_va: null
+    factor_demanda: 0.25
+    descripcion: "A partir de 120000 VA al 25%"

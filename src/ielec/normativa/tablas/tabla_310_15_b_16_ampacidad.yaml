@@ -1,0 +1,51 @@
+norma: "NTC 2050 (Segunda Actualización)"
+articulo: "Tabla 310.15(B)(16)"
+titulo: "Ampacidades admisibles para conductores aislados no más de 3 conductores en canalización a 30 °C"
+documento_fuente: "InstalacionesElectricas_elementos4.pdf"
+diapositiva_fuente: 10
+edicion: "Segunda Actualización"
+fecha_transcripcion: "2026-10-27"
+
+cobre:
+  "14":
+    ampacidad_60c: 15
+    ampacidad_75c: 20
+    ampacidad_90c: 25
+    proteccion_max_240_4d: 15
+    seccion_mm2: 2.08
+  "12":
+    ampacidad_60c: 20
+    ampacidad_75c: 25
+    ampacidad_90c: 30
+    proteccion_max_240_4d: 20
+    seccion_mm2: 3.31
+  "10":
+    ampacidad_60c: 30
+    ampacidad_75c: 35
+    ampacidad_90c: 40
+    proteccion_max_240_4d: 30
+    seccion_mm2: 5.26
+  "8":
+    ampacidad_60c: 40
+    ampacidad_75c: 50
+    ampacidad_90c: 55
+    proteccion_max_240_4d: null
+    seccion_mm2: 8.37
+  "6":
+    ampacidad_60c: 55
+    ampacidad_75c: 65
+    ampacidad_90c: 75
+    proteccion_max_240_4d: null
+    seccion_mm2: 13.3
+  "4":
+    ampacidad_60c: 70
+    ampacidad_75c: 85
+    ampacidad_90c: 95
+    proteccion_max_240_4d: null
+    seccion_mm2: 21.2
+  "2":
+    ampacidad_60c: 95
+    ampacidad_75c: 115
+    ampacidad_90c: 130
+    proteccion_max_240_4d: null
+    seccion_mm2: 33.6

@@ -1,0 +1,23 @@
+norma: "NTC 2050 (Segunda Actualización)"
+articulo: "Tabla 250.122"
+titulo: "Calibre mínimo de los conductores de puesta a tierra para canalizaciones y equipos"
+documento_fuente: "InstalacionesElectricas_casoPractico.pdf"
+diapositiva_fuente: 23
+edicion: "Segunda Actualización"
+fecha_transcripcion: "2026-10-27"
+
+rangos:
+  - proteccion_max_amperios: 15
+    calibre_min_cobre_awg: "14"
+  - proteccion_max_amperios: 20
+    calibre_min_cobre_awg: "12"
+  - proteccion_max_amperios: 30
+    calibre_min_cobre_awg: "10"
+  - proteccion_max_amperios: 40
+    calibre_min_cobre_awg: "10"
+  - proteccion_max_amperios: 60
+    calibre_min_cobre_awg: "10"
+  - proteccion_max_amperios: 100
+    calibre_min_cobre_awg: "8"
+  - proteccion_max_amperios: 200
+    calibre_min_cobre_awg: "6"

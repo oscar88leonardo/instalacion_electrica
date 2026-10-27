@@ -1,0 +1,20 @@
+norma: "NTC 2050"
+articulo: "Tabla 210.24"
+titulo: "Requisitos de los circuitos ramales con varias salidas"
+documento_fuente: "InstalacionesElectricas_elementos4.pdf"
+diapositiva_fuente: 3
+fecha_transcripcion: "2026-10-27"
+
+circuitos:
+  15:
+    calibre_min_cobre_awg: "14"
+    capacidad_dispositivo_amperios: 15
+    potencia_max_continua_va_120v: 1440 # 80% de 1800 VA
+    potencia_max_total_va_120v: 1800
+    usos_tipicos: ["Alumbrado general", "Tomacorrientes de uso general"]
+  20:
+    calibre_min_cobre_awg: "12"
+    capacidad_dispositivo_amperios: 20
+    potencia_max_continua_va_120v: 1920 # 80% de 2400 VA
+    potencia_max_total_va_120v: 2400
+    usos_tipicos: ["Pequeños artefactos cocina/comedor", "Zona de lavandería/planchado", "Cuarto de baño"]

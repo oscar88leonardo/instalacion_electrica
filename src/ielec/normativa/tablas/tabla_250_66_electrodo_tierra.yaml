@@ -1,0 +1,18 @@
+norma: "NTC 2050 (Segunda Actualización)"
+articulo: "Tabla 250.66"
+titulo: "Conductor del electrodo de puesta a tierra para sistemas de corriente alterna"
+documento_fuente: "InstalacionesElectricas_casoPractico.pdf"
+diapositiva_fuente: 24
+edicion: "Segunda Actualización"
+fecha_transcripcion: "2026-10-27"
+
+rangos_cobre:
+  - calibre_fase_max_awg: "2"
+    calibre_min_electrodo_cu_awg: "8"
+    descripcion: "Calibre del mayor conductor de fase de entrada calibre 2 AWG o menor"
+  - calibre_fase_max_awg: "1/0"
+    calibre_min_electrodo_cu_awg: "6"
+    descripcion: "Calibre del mayor conductor de fase de entrada 1 o 1/0 AWG"
+  - calibre_fase_max_awg: "3/0"
+    calibre_min_electrodo_cu_awg: "4"
+    descripcion: "Calibre del mayor conductor de fase de entrada 2/0 o 3/0 AWG"

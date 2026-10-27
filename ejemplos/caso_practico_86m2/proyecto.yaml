@@ -1,0 +1,56 @@
+proyecto:
+  nombre: "Vivienda Unifamiliar Caso Práctico"
+  descripcion: "Vivienda residencial de un piso de 86 m² según caso práctico de referencia"
+  sistema: "MONOFASICO_120"
+  tension_nominal_v: 120.0
+  frecuencia_hz: 60
+  area_construida_exterior_m2: 86.0
+
+acometida:
+  longitud_m: 15.0
+  tipo_canalizacion: "ducto_pvc"
+  impedancia_z_ohm_km: 2.4 # Valor tomado de la diapositiva del caso práctico para 8 AWG en PVC
+  caida_tension_max_admisible_porc: 3.0
+
+circuitos_especiales_normativos:
+  pequenos_artefactos:
+    cantidad: 2
+    potencia_unitaria_va: 1500.0
+  bano:
+    incluir_circuito_exclusivo_20a: true
+  lavanderia:
+    incluir_circuito_20a: false # En el caso práctico no desglosan lavandería independiente
+
+espacios:
+  - id: "alcoba_principal"
+    nombre: "Alcoba Principal"
+    tipo: "dormitorio_principal"
+    area_m2: 14.68
+  - id: "alcoba_1"
+    nombre: "Alcoba 1"
+    tipo: "dormitorio_secundario"
+    area_m2: 10.44
+  - id: "alcoba_2"
+    nombre: "Alcoba 2"
+    tipo: "dormitorio_secundario"
+    area_m2: 10.44
+  - id: "sala"
+    nombre: "Sala"
+    tipo: "sala"
+    area_m2: 14.00
+  - id: "comedor"
+    nombre: "Comedor"
+    tipo: "comedor"
+    area_m2: 12.00
+  - id: "cocina"
+    nombre: "Cocina"
+    tipo: "cocina"
+    area_m2: 9.00
+  - id: "bano"
+    nombre: "Baño"
+    tipo: "bano"
+    area_m2: 4.50
+  - id: "pasillo"
+    nombre: "Hall y Circulaciones"
+    tipo: "pasillo"
+    area_m2: 10.94

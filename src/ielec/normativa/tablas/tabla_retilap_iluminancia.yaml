@@ -1,0 +1,34 @@
+norma: "RETILAP"
+seccion: "Niveles de iluminancia para áreas residenciales"
+documento_fuente: "InstalacionesElectricas_casoPractico.pdf"
+diapositiva_fuente: 7
+fecha_transcripcion: "2026-10-27"
+
+espacios:
+  dormitorio_principal:
+    iluminancia_lux: 100
+    descripcion: "Dormitorio o alcoba principal (área general)"
+  dormitorio_secundario:
+    iluminancia_lux: 100
+    descripcion: "Dormitorio o alcoba secundaria"
+  sala:
+    iluminancia_lux: 150
+    descripcion: "Sala de estar / estar de televisión"
+  comedor:
+    iluminancia_lux: 150
+    descripcion: "Comedor"
+  cocina:
+    iluminancia_lux: 300
+    descripcion: "Cocina y mesón de preparación"
+  bano:
+    iluminancia_lux: 150
+    descripcion: "Cuarto de baño general"
+  zona_ropas:
+    iluminancia_lux: 200
+    descripcion: "Zona de ropas / lavandería"
+  pasillo:
+    iluminancia_lux: 100
+    descripcion: "Pasillos, circulaciones y vestíbulos"
+  exterior:
+    iluminancia_lux: 50
+    descripcion: "Entrada exterior, porches, balcones"

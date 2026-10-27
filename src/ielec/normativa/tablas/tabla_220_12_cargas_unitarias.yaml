@@ -1,0 +1,13 @@
+norma: "NTC 2050 (Segunda Actualización)"
+articulo: "220.12"
+titulo: "Cargas de alumbrado general por tipo de ocupación"
+documento_fuente: "InstalacionesElectricas_casoPractico.pdf"
+diapositiva_fuente: 13
+edicion: "Segunda Actualización"
+fecha_transcripcion: "2026-10-27"
+
+valores:
+  unidades_de_vivienda:
+    densidad_va_m2: 33.0
+    descripcion: "Unidades residenciales de vivienda (calculado sobre el área exterior construida)"
+    regla_exclusion: "Excluye porches abiertos, garajes o espacios no adaptados o sin terminar para ser habitados en el futuro."

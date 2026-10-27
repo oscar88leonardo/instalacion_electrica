@@ -1,0 +1,16 @@
+norma: "RETIE 2026"
+capitulo: "Libro 3 - Requisitos de Instalación"
+articulo: "Tabla 5 - Código de colores para conductores de baja tensión"
+documento_fuente: "InstalacionesElectricas_elementos4.pdf"
+diapositiva_fuente: 16
+fecha_transcripcion: "2026-10-27"
+
+sistema_monofasico_120v:
+  fase:
+    color_principal: "Negro"
+    color_alternativo: "Rojo"
+  neutro:
+    color_principal: "Blanco"
+  tierra_proteccion:
+    color_principal: "Verde"
+    color_alternativo: "Verde con franja amarilla o Alambre desnudo"

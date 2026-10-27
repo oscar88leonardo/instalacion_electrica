@@ -1,0 +1,36 @@
+titulo: "Valores de impedancia de referencia para conductores de cobre en ducto PVC (60 Hz, baja tensión)"
+documento_fuente: "InstalacionesElectricas_casoPractico.pdf"
+diapositiva_fuente: 20
+fecha_transcripcion: "2026-10-27"
+descripcion: "Valores tomados de las presentaciones de referencia para cálculo de caída de tensión a 120 V"
+
+cobre_conduit_pvc:
+  "14":
+    impedancia_ohm_km: 10.2
+    resistencia_ohm_km: 10.2
+    seccion_mm2: 2.08
+  "12":
+    impedancia_ohm_km: 6.6
+    resistencia_ohm_km: 6.6
+    seccion_mm2: 3.31
+  "10":
+    impedancia_ohm_km: 3.9
+    resistencia_ohm_km: 3.9
+    seccion_mm2: 5.26
+  "8":
+    impedancia_ohm_km: 2.4
+    resistencia_ohm_km: 2.4
+    seccion_mm2: 8.37
+    nota: "Valor usado explícitamente en el Caso Práctico (Z = 2.4 ohm/km a 15 m con I = 33.3 A)"
+  "6":
+    impedancia_ohm_km: 1.5
+    resistencia_ohm_km: 1.5
+    seccion_mm2: 13.3
+  "4":
+    impedancia_ohm_km: 0.95
+    resistencia_ohm_km: 0.95
+    seccion_mm2: 21.2
+  "2":
+    impedancia_ohm_km: 0.60
+    resistencia_ohm_km: 0.60
+    seccion_mm2: 33.6

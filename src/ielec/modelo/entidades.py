@@ -7,8 +7,8 @@ from pydantic import BaseModel, Field
 
 class TipoSistemaElectrico(str, Enum):
     MONOFASICO_120 = "MONOFASICO_120"
-    BIFASICO_120_240 = "BIFASICO_120_240"      # Trabajo futuro
-    TRIFASICO_208_120 = "TRIFASICO_208_120"    # Trabajo futuro
+    BIFASICO_120_240 = "BIFASICO_120_240"
+    TRIFASICO_208_120 = "TRIFASICO_208_120"
 
 
 class TipoEspacio(str, Enum):
@@ -26,9 +26,9 @@ class TipoEspacio(str, Enum):
 
 class TipoProteccion(str, Enum):
     TERMOMAGNETICO_ESTANDAR = "TERMOMAGNETICO_ESTANDAR"
-    AFCI = "AFCI"               # Interruptor de falla por arco (NTC 2050 210.12)
-    GFCI = "GFCI"               # Interruptor de falla a tierra (NTC 2050 210.8)
-    AFCI_GFCI = "AFCI_GFCI"     # Dual Function
+    AFCI = "AFCI"
+    GFCI = "GFCI"
+    AFCI_GFCI = "AFCI_GFCI"
 
 
 class TipoCircuito(str, Enum):
@@ -36,7 +36,7 @@ class TipoCircuito(str, Enum):
     PEQUENOS_ARTEFACTOS = "PEQUENOS_ARTEFACTOS"
     LAVANDERIA = "LAVANDERIA"
     BANO = "BANO"
-    CARGA_ESPECIAL = "CARGA_ESPECIAL"  # Trabajo futuro
+    CARGA_ESPECIAL = "CARGA_ESPECIAL"
 
 
 class Espacio(BaseModel):
@@ -106,7 +106,7 @@ class Medidor(BaseModel):
 class HallazgoValidacion(BaseModel):
     regla_id: str
     articulo_norma: str
-    severidad: str  # "ERROR", "ADVERTENCIA", "INFO"
+    severidad: str
     mensaje: str
 
 

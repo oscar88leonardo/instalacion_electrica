@@ -18,21 +18,14 @@ def determinar_tipo_proteccion(
     tipo_circuito: TipoCircuito,
     tipos_espacio_atendidos: List[TipoEspacio],
 ) -> TipoProteccion:
-    """Determina si un circuito ramal requiere AFCI, GFCI o termomagnético estándar.
-    
-    Reglas NTC 2050:
-    - 210.12 (AFCI): obligatorio en dormitorios, salas, comedores, pasillos, etc.
-    - 210.8 (GFCI): obligatorio en baños, mesones de cocina, lavandería, exteriores.
-    """
+    """Determina si un circuito ramal requiere AFCI, GFCI o termomagnético estándar."""
     if tipo_circuito == TipoCircuito.BANO:
         return TipoProteccion.GFCI
     elif tipo_circuito == TipoCircuito.PEQUENOS_ARTEFACTOS:
-        # Cocina requiere GFCI en mesones
         return TipoProteccion.GFCI
     elif tipo_circuito == TipoCircuito.LAVANDERIA:
         return TipoProteccion.GFCI
     
-    # Para circuitos de alumbrado y tomas generales:
     tiene_dormitorio_o_sala = any(
         esp in [
             TipoEspacio.DORMITORIO_PRINCIPAL,

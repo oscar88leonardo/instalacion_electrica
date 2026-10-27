@@ -18,25 +18,18 @@ def test_carga_unitaria_vivienda():
 
 
 def test_factores_demanda_ntc_220_42():
-    # Menor o igual a 3000 VA -> 100%
     assert calcular_demanda_alumbrado_general(2500) == 2500.0
     assert calcular_demanda_alumbrado_general(3000) == 3000.0
-    
-    # Caso práctico: 5838 VA -> 3000 + (5838 - 3000) * 0.35 = 3993.3
-    # O para 2838 de exceso sobre 3000:
     assert round(calcular_demanda_alumbrado_general(5838), 1) == 3993.3
 
 
 def test_ampacidad_cobre_y_limite_240_4d():
-    # 14 AWG
     assert obtener_ampacidad_cobre("14", 75) == 20
     assert obtener_proteccion_maxima_240_4d("14") == 15
     
-    # 12 AWG
     assert obtener_ampacidad_cobre("12", 75) == 25
     assert obtener_proteccion_maxima_240_4d("12") == 20
     
-    # 8 AWG (acometida caso práctico)
     assert obtener_ampacidad_cobre("8", 75) == 50
     assert obtener_proteccion_maxima_240_4d("8") is None
 

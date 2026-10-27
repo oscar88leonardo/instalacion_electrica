@@ -20,43 +20,30 @@ def calcular_acometida(
     calibre_forzado_awg: Optional[str] = None,
     limite_regulacion_porc: float = 3.0,
 ) -> Acometida:
-    """Calcula y verifica el alimentador / acometida de la vivienda unifamiliar.
-    
-    1. Corriente de demanda: I = S_demanda / V
-    2. Capacidad de proteccion: breaker comercial (ej. 40 A para 33.3 A)
-    3. Calibre: conductor de Cu (ej. 8 AWG)
-    4. Caida de tension monofasica: DeltaV = 2 * Z * (L/1000) * I
-    5. % Regulacion: (DeltaV / V) * 100 <= 3%
-    """
+    """Calcula y verifica el alimentador / acometida de la vivienda unifamiliar."""
     if tension_v <= 0:
         raise ValueError("La tensión debe ser mayor a cero.")
     if longitud_m <= 0:
         raise ValueError("La longitud del alimentador debe ser mayor a cero.")
         
     corriente_demanda_a = round(potencia_demanda_va / tension_v, 2)
-    
-    # Capacidad del breaker comercial
     capacidad_proteccion = seleccionar_breaker_comercial(corriente_demanda_a)
     
-    # Selección de calibre
     calibre_seleccionado = calibre_forzado_awg or seleccionar_calibre_acometida(
         corriente_diseno_a=corriente_demanda_a,
         capacidad_proteccion_a=capacidad_proteccion,
     )
     
-    # Impedancia eficaz Z (ohm/km)
     if impedancia_z_ohm_km is not None:
         z = impedancia_z_ohm_km
     else:
         z = obtener_impedancia_referencia_ohm_km(calibre_seleccionado)
         
-    # Caída de tensión monofásica a dos hilos (Fase + Neutro): DeltaV = 2 * Z * L(km) * I
     distancia_km = longitud_m / 1000.0
     caida_tension_v = round(2.0 * z * distancia_km * corriente_demanda_a, 2)
     porcentaje_reg = round((caida_tension_v / tension_v) * 100.0, 2)
     cumple_reg = porcentaje_reg <= limite_regulacion_porc
     
-    # Conductores de tierra
     tierra_equipos = obtener_calibre_minimo_tierra_equipos(capacidad_proteccion)
     electrodo_tierra = obtener_calibre_minimo_electrodo_tierra(calibre_seleccionado)
     

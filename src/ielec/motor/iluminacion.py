@@ -12,10 +12,7 @@ def calcular_iluminacion_espacio(
     coeficiente_utilizacion: float = 0.55,
     factor_mantenimiento: float = 0.80,
 ) -> CalculoIluminacionEspacio:
-    """Calcula el número de luminarias necesarias para un espacio según RETILAP.
-    
-    Fórmula: N = (E * A) / (F * CU * MF)
-    """
+    """Calcula el número de luminarias necesarias para un espacio según RETILAP."""
     lux_requerido = obtener_lux_retilap(espacio.tipo.value)
     
     denominador = flujo_luminoso_lumen * coeficiente_utilizacion * factor_mantenimiento
@@ -23,9 +20,6 @@ def calcular_iluminacion_espacio(
         raise ValueError("Los factores de flujo, CU y MF deben ser mayores que cero.")
     
     n_calculado = (lux_requerido * espacio.area_m2) / denominador
-    
-    # Adopción de cantidad: al menos 1 por espacio habitable
-    # Para áreas de dormitorio/estar suele adoptarse 1 o más según distribución funcional
     n_adoptado = max(1, math.ceil(n_calculado)) if n_calculado > 1.3 else max(1, round(n_calculado))
     
     return CalculoIluminacionEspacio(

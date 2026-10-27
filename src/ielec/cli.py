@@ -1,6 +1,5 @@
 """Interfaz de línea de comandos (CLI) para ielec."""
 
-import json
 from pathlib import Path
 from typing import Optional
 import typer
@@ -15,15 +14,8 @@ from .motor import disenar_instalacion_electrica
 app = typer.Typer(
     name="ielec",
     help="Herramienta de diseño de instalaciones eléctricas residenciales según NTC 2050 y RETIE.",
-    no_args_is_help=True,
 )
 console = Console()
-
-
-@app.callback()
-def main():
-    """Herramienta de diseño eléctrico según NTC 2050, RETIE y RETILAP."""
-    pass
 
 
 @app.command(name="calcular")
@@ -189,5 +181,20 @@ def calcular(
         console.print(f"[bold green]Diseño exportado exitosamente a:[/bold green] {salida_json}")
 
 
-if __name__ == "__main__":
+@app.command(name="version")
+def version():
+    """Muestra la versión de ielec y normativa soportada."""
+    console.print("[bold cyan]ielec[/bold cyan] v0.1.0")
+    console.print("Base normativa: [bold]NTC 2050 (2ª ed.), RETIE 2026, RETILAP[/bold]")
+
+
+def main():
+    import sys
+    # Si el usuario pasa un archivo directamente sin la palabra 'calcular', lo insertamos
+    if len(sys.argv) > 1 and sys.argv[1] not in ["calcular", "version", "--help", "-h", "--install-completion", "--show-completion"]:
+        sys.argv.insert(1, "calcular")
     app()
+
+
+if __name__ == "__main__":
+    main()

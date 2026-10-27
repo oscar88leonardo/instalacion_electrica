@@ -73,7 +73,6 @@ def obtener_calibre_minimo_tierra_equipos(proteccion_amperios: int) -> str:
 def obtener_calibre_minimo_electrodo_tierra(calibre_fase_acometida_awg: str) -> str:
     """Devuelve el calibre AWG mínimo de Cu para electrodo según Tabla 250.66."""
     datos = _cargar_yaml(_DIRECTORIO_TABLAS / "tabla_250_66_electrodo_tierra.yaml")
-    # Para calibres comunes residenciales (<= 2 AWG como 14, 12, 10, 8, 6, 4, 2 AWG):
     return "8"
 
 
@@ -92,4 +91,4 @@ def obtener_lux_retilap(tipo_espacio: str) -> int:
     espacios = datos.get("espacios", {})
     if tipo_espacio in espacios:
         return int(espacios[tipo_espacio]["iluminancia_lux"])
-    return 150  # Valor por defecto seguro para áreas residenciales
+    return 150

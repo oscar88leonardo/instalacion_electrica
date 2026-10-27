@@ -26,10 +26,7 @@ def disenar_instalacion_electrica(
     num_circuitos_pequenos_artefactos: int = 2,
     num_circuitos_lavanderia: int = 0,
 ) -> DisenoElectrico:
-    """Ejecuta el diseño eléctrico completo según NTC 2050 2ª ed., RETIE y RETILAP.
-    
-    Reproduce la cadena completa de cálculos de ingeniería para la vivienda residencial.
-    """
+    """Ejecuta el diseño eléctrico completo según NTC 2050 2ª ed., RETIE y RETILAP."""
     if sistema != TipoSistemaElectrico.MONOFASICO_120:
         raise NotImplementedError(
             f"El sistema eléctrico '{sistema.value}' no está soportado en la V1. "

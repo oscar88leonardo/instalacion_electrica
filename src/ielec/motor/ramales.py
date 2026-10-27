@@ -2,9 +2,8 @@
 
 import math
 from typing import List, Optional
-from ..modelo.entidades import CircuitoRamal, TipoCircuito, TipoProteccion, TipoEspacio, Espacio
+from ..modelo.entidades import CircuitoRamal, TipoCircuito, TipoProteccion, Espacio
 from .conductores import seleccionar_calibre_cobre_ramal
-from .protecciones import determinar_tipo_proteccion
 
 
 def dimensionar_circuitos_ramales(
@@ -14,14 +13,7 @@ def dimensionar_circuitos_ramales(
     incluir_circuito_bano_20a: bool = True,
     incluir_circuito_lavanderia_20a: bool = False,
 ) -> List[CircuitoRamal]:
-    """Genera la lista de circuitos ramales mínimos para la vivienda unifamiliar.
-    
-    1. Circuitos de alumbrado general (15 A, 120 V, 14 AWG Cu).
-       Cantidad minima = ceil(carga_alumbrado / (V * 15 A)) = ceil(carga / 1800 VA).
-    2. Minimo 2 circuitos de pequenos artefactos (20 A, 120 V, 12 AWG Cu).
-    3. Circuito de bano exclusivo (20 A, 120 V, 12 AWG Cu, GFCI, NTC 2050 210.11(C)(3)).
-    4. Circuito de lavanderia (20 A, 120 V, 12 AWG Cu, GFCI) si aplica.
-    """
+    """Genera la lista de circuitos ramales mínimos para la vivienda unifamiliar."""
     circuitos: List[CircuitoRamal] = []
     num_circuito = 1
     
@@ -33,7 +25,7 @@ def dimensionar_circuitos_ramales(
     calibre_15a = seleccionar_calibre_cobre_ramal(15)
     
     for i in range(num_circuitos_alumbrado):
-        tipo_prot = TipoProteccion.AFCI  # Alumbrado y tomas generales residenciales
+        tipo_prot = TipoProteccion.AFCI
         circuitos.append(
             CircuitoRamal(
                 numero=num_circuito,
@@ -54,7 +46,7 @@ def dimensionar_circuitos_ramales(
         )
         num_circuito += 1
         
-    # 2. Pequeños artefactos (mínimo 2 circuitos de 20 A)
+    # 2. Pequeños artefactos
     calibre_20a = seleccionar_calibre_cobre_ramal(20)
     for i in range(2):
         circuitos.append(
@@ -99,7 +91,7 @@ def dimensionar_circuitos_ramales(
         )
         num_circuito += 1
         
-    # 4. Circuito de baño (NTC 2050 210.11(C)(3))
+    # 4. Circuito de baño
     if incluir_circuito_bano_20a:
         circuitos.append(
             CircuitoRamal(
@@ -109,7 +101,7 @@ def dimensionar_circuitos_ramales(
                 tipo=TipoCircuito.BANO,
                 tension_v=tension_v,
                 corriente_nominal_a=20,
-                potencia_va=0.0,  # Conforme a 220.52 no suma potencia de demanda en acometida
+                potencia_va=0.0,
                 corriente_diseno_a=round(0.0 / tension_v, 2),
                 calibre_fase_awg=calibre_20a,
                 calibre_neutro_awg=calibre_20a,
